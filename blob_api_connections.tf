@@ -1,27 +1,5 @@
-terraform {
-  required_providers {
-    azapi = {
-      source = "Azure/azapi"
-    }
-  }
-  required_version = ">= 0.14"
-}
+//Refer azapi provider in provider.tf 
 
-provider "azapi" {
-}
-
-provider "azurerm" {
-  features {}
-}
-
-
-resource "azurerm_resource_group" "testrg" {
-  name = "testrg"
-  location = "centralus"
-}
-
-
-//
 resource "azapi_resource" "keybasedApiConn" {
   type                      = "Microsoft.Web/connections@2018-07-01-preview"
   name                      = "key-based-api-connected"
